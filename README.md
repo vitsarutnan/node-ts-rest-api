@@ -4,7 +4,7 @@
 ##### Core functionality
 
 - [x] set up typescript for dev
-- [ ] basic express server with typescript
+- [x] basic express server with typescript
 - [ ] setup database
 - [ ] create model
 - [ ] read todo with pagaination
