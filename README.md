@@ -5,7 +5,7 @@
 
 - [x] set up typescript for dev
 - [x] basic express server with typescript
-- [ ] setup database
+- [x] setup database
 - [ ] create model
 - [ ] read todo with pagaination
 - [ ] read todo with id
