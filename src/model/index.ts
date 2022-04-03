@@ -7,12 +7,12 @@ interface TodoAttributes {
     completed: boolean;
 }
 
-class Todoinstance extends Model<TodoAttributes> { }
+export class Todoinstance extends Model<TodoAttributes> { }
 
 Todoinstance.init(
     {
         "id": {
-            type: DataTypes.STRING,
+            type: DataTypes.UUIDV4,
             primaryKey: true,
             allowNull: false
         },

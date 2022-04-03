@@ -7,6 +7,7 @@
 - [x] basic express server with typescript
 - [x] setup database
 - [x] create model
+- [x] create todo
 - [ ] read todo with pagaination
 - [ ] read todo with id
 - [ ] update todo
