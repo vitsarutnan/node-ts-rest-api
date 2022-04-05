@@ -49,6 +49,21 @@ app.get(
     }
 );
 
+app.get(
+    '/todos/:id',
+    TodoValidator.checkGetTodo(),
+    Middleware.hadleValidationError,
+    async (req: Req, res: Res) => {
+        try {
+            const { id } = req.params;
+            const record = await Todoinstance.findOne({ where: { id } });
+            return res.json(record);
+        } catch {
+            res.status(500).json({ msg: 'fail to get toodo with id.', status: 500, route: 'METHOD GET /todos/:id' });
+        }
+    }
+);
+
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });

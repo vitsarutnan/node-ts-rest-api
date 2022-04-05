@@ -9,7 +9,7 @@
 - [x] create model
 - [x] create todo
 - [x] read todo with pagination
-- [ ] read todo with id
+- [x] read todo with id
 - [ ] update todo
 - [ ] delete todo
 
