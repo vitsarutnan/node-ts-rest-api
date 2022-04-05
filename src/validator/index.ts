@@ -64,6 +64,16 @@ class TodoValidator {
 
         ];
     }
+
+    checkDeleateTodo() {
+        return [
+            param('id')
+                .notEmpty()
+                .withMessage('The param "id" should be not empty.')
+                .isUUID()
+                .withMessage('The param "id" should be UUIDv4.')
+        ];
+    }
 }
 
 export default new TodoValidator();

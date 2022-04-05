@@ -87,6 +87,27 @@ app.put(
     }
 );
 
+app.delete(
+    '/todos/:id',
+    TodoValidator.checkDeleateTodo(),
+    Middleware.hadleValidationError,
+    async (req: Req, res: Res) => {
+        try {
+            const { id } = req.params;
+            const record = await Todoinstance.findOne({ where: { id } });
+
+            if (!record) {
+                return res.json({ msg: 'Can not find existing record.' });
+            }
+
+            const deletedRecord = await record.destroy();
+            return res.json({ record: deletedRecord });
+        } catch {
+            res.status(500).json({ msg: 'fail to delete todo.', status: 500, route: 'METHOD DELETE /todos/:id' });
+        }
+    }
+);
+
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });

@@ -11,6 +11,6 @@
 - [x] read todo with pagination
 - [x] read todo with id
 - [x] update todo
-- [ ] delete todo
+- [x] delete todo
 
 ##### Ref: [Build a bullet proof REST API with Typescript, Express.js and Sequelize with Sqlite3 |CRUD REST API](https://www.youtube.com/watch?v=yFgrSJGNj0E&list=PLYHXTr4kGJjEGnww4pGca4QY7aKBZ6L-I)
