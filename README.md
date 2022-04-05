@@ -8,7 +8,7 @@
 - [x] setup database
 - [x] create model
 - [x] create todo
-- [ ] read todo with pagaination
+- [x] read todo with pagination
 - [ ] read todo with id
 - [ ] update todo
 - [ ] delete todo
