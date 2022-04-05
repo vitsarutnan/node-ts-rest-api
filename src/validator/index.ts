@@ -41,7 +41,28 @@ class TodoValidator {
                 .withMessage('The param "id" should be not empty.')
                 .isUUID()
                 .withMessage('The param "id" should be UUIDv4.')
-        ]
+        ];
+    }
+
+    checkUpdateTodo() {
+        return [
+            param('id')
+                .notEmpty()
+                .withMessage('The param "id" should be not empty.')
+                .isUUID()
+                .withMessage('The param "id" should be UUIDv4.'),
+            body('title')
+                .notEmpty()
+                .withMessage('The "title" value should be not empty.'),
+            body('completed')
+                .notEmpty()
+                .withMessage('The "completed" value should be not empty.')
+                .isBoolean()
+                .withMessage('The "completed" value should be boolean.')
+                .isIn([0, 1, false, true])
+                .withMessage('The value should be [0, 1] or [false, true].')
+
+        ];
     }
 }
 

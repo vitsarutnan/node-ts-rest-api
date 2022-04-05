@@ -59,7 +59,30 @@ app.get(
             const record = await Todoinstance.findOne({ where: { id } });
             return res.json(record);
         } catch {
-            res.status(500).json({ msg: 'fail to get toodo with id.', status: 500, route: 'METHOD GET /todos/:id' });
+            res.status(500).json({ msg: 'fail to get todo with id.', status: 500, route: 'METHOD GET /todos/:id' });
+        }
+    }
+);
+
+app.put(
+    '/todos/:id',
+    TodoValidator.checkUpdateTodo(),
+    Middleware.hadleValidationError,
+    async (req: Req, res: Res) => {
+        try {
+            const { id } = req.params;
+            const { title, completed } = req.body;
+            const record = await Todoinstance.findOne({ where: { id } });
+
+            if (!record) {
+                return res.json({ msg: 'Can not find existing record.' });
+            }
+
+            const updatedRecord = await record.update({ title, completed });
+            return res.json({ record: updatedRecord });
+
+        } catch {
+            res.status(500).json({ msg: 'fail to update todo.', status: 500, route: 'METHOD PUT /todos/:id' });
         }
     }
 );
